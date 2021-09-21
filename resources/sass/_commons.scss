@@ -1,0 +1,148 @@
+// commons
+
+// ALL BUTTONS
+.blue_button{
+    background-color: #044BD9;
+    color: white;
+
+    &:hover{
+        background-color: #286bf0;
+        color: white;
+    } 
+}
+
+.dark_button{
+    background-color: #0D0D0D;
+    color: white;
+
+    &:hover{
+        background-color: #313131;
+        color: white;
+    }
+          
+}
+
+.dark_blue_btn{
+    background-color:#010440;
+    color:whitesmoke;
+
+    &:hover{
+        background-color:#865FD9;
+        color:whitesmoke;  
+    }
+}
+
+
+// ALL SPAN
+.notification_span{
+    background-color: #F27127;
+    color:whitesmoke;
+}
+
+.post_tag{
+    background-color: #F28A2E;
+    color: white;
+    font-size: 12px;
+}
+
+
+// ALL ALERT DIVS
+.alert_primary{
+    background-color:  rgba(168, 168, 168,0.1);
+    color:  rgb(109, 109, 109);
+    border:1px solid rgb(168, 168, 168);
+}
+
+.alert_danger{
+    background-color:  rgba(134, 95, 217, 0.1);
+    color:  #865FD9;
+    border:1px solid #865FD9;
+}
+
+.alert_success{
+    background-color:  rgba(49, 2, 115,0.1);
+    color:  #310273;
+    border:1px solid #310273;
+}
+
+
+// APP
+.my_navbar{
+    background-color: #000014;
+}
+
+.my_sidebar{
+    background-color: #010326;
+    
+
+    .my_dashboard{
+        background-image: linear-gradient(225deg, #010013 0%, #230c54 50%, #865FD9 100%);
+        color: whitesmoke;
+    }
+
+    .my_menu{
+        ul{
+            li{
+                a{
+                    color: #D6CEF2;
+                    h6{
+                        padding-left: 5px;
+                        color: #D6CEF2;
+                        &:hover{
+                            color:#865FD9;
+                        }
+                    }
+                }
+
+                ul{
+                    li{
+                        span{
+                            padding-left: 5px;
+                            &:hover{
+                                color:#865FD9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+// POSTS.INDEX
+.my_table{
+    tbody{
+        td{
+            .btn_show{
+                background-color: rgb(168, 168, 168);
+                color: white;
+
+                &:hover{
+                    background-color: rgb(109, 109, 109);
+                }
+            }
+            
+            .btn_edit{
+                background-color: #380381;
+                color: white;
+
+                &:hover{
+                    background-color:#1D0259 ;
+                }
+            }
+
+            .btn_delete{
+                background-color: #865FD9;
+                color: white;
+
+                &:hover{
+                    background-color: #9e7be9;
+                }
+            }
+
+        }
+    }
+}
+
