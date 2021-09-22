@@ -11,30 +11,36 @@
                         <div class="card-header border-secondary d-flex justify-content-between align-items-center my_card_header">
                             <h5 class="card-title h-25">{{post.title}}</h5>
 
-                            <div class="social icons">
+                            <div class="social_icons">
                                 <i class="bi bi-share"></i>
-                                 <i class="bi bi-heart-fill mx-3"></i>
+                                <i class="bi bi-heart-fill mx-3"></i>
                                 <i class="bi bi-save2"></i>
                             </div>
                         </div>
                         <!-- Card Body -->
                         <div class="card-body my_card_body">
+
+                            <!-- POST CONTENT -->
                             <p class="card-text">{{post.content}}</p>
+
+                            <!-- TAGS -->
                             <div class="post_tags" v-if="post.tags">
                                 <span v-for="(tag,index) in post.tags" :key="index">#{{tag.name}}</span>
                             </div>
-                            <span class="btn" v-if="post.category">{{post.category.name}}</span>
-                            <div class="post_date">
-                                <div class="author">     
-                                    <i class="bi bi-person-circle"></i>
-                                    <h5 class="d-inline-block mx-1">User</h5>
-                                 </div>
+
+                            <!-- CATEGORY -->
+                            <span class="btn my_category my-3" v-if="post.category">{{post.category.name}}</span>
+
+                            <!-- AUTHOR+DATE -->
+                            <div class="author_date">
+                                <div class="author"> Written by: <h6 class="d-inline-block mx-1">User</h6></div>
                                 <span class="date_post">Posted on: {{formatDate(post.created_at)}}</span>
                             </div>
+
                         </div>
                     </div>
                 </div>
-            <router-link :to="{name:'blog'}" class="btn btn-light my-4">Go Back</router-link>
+            <router-link :to="{name:'blog'}" class="btn btn-light my-4 mx-3">Go Back</router-link>
             </div>
         </div>
     </main>
@@ -92,7 +98,6 @@ export default {
 
 <style lang="scss" scoped>
 main{
-    /* background-image: url('/img/bg_2.jpg'); */
     background-color: black;
     background-size: cover;
     min-height:100vh;
@@ -113,6 +118,7 @@ main{
                 object-fit: cover;
             }
         }
+
         .my_card{
             border-radius:0;
             background-color: #F2F2F2;
@@ -127,23 +133,15 @@ main{
                 }
             }
 
-            &:hover .my_card_header>.author>h5{
-              
-                cursor: context-menu;
-            }
-
-            &:hover  .my_card_body>h5{
-               
+            &:hover .my_card_header>h5{
                 cursor: context-menu;
             }
 
             &:hover  .my_card_body>p{
-             
                 cursor: context-menu;
             }
 
-            &:hover  .my_card_body>.post_date{
-               
+            &:hover .my_card_body>.author_date{
                 cursor: context-menu;
             }
 
@@ -154,10 +152,6 @@ main{
             }
 
             .my_card_body{
-                h5{
-                    color: #73026B;
-                    transition:all 0.3s ease-in;
-                }
 
                 p{
                     color:#1D0259;;
@@ -174,10 +168,25 @@ main{
                     }
                 }
 
-                .post_date{
+                .my_category{
+                    background-color: #060d2f;
+                    color:white;
+                    
+                    &:hover{
+                        cursor: context-menu;
+                    }
+                }
+
+                .author_date{
                     text-align: right;
                     font-size:12px;
                     color: #010326;
+
+                    .author{
+                        h6{
+                            color:#060d2f;
+                        }
+                    }
                 }
             }
 

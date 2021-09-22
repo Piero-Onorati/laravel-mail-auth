@@ -2751,6 +2751,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SiglePost',
   data: function data() {
@@ -7395,7 +7401,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-67cb3b51] {\n  /* background-image: url('/img/bg_2.jpg'); */\n  background-color: black;\n  background-size: cover;\n  min-height: 100vh;\n  width: 100%;\n  overflow: hidden;\n}\nmain .my_container[data-v-67cb3b51] {\n  background-color: rgba(1, 0, 20, 0.8);\n  min-height: 100vh;\n  padding: 0;\n}\nmain .my_container .img_box[data-v-67cb3b51] {\n  width: 100%;\n  height: 300px;\n}\nmain .my_container .img_box img[data-v-67cb3b51] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\nmain .my_container .my_card[data-v-67cb3b51] {\n  border-radius: 0;\n  background-color: #F2F2F2;\n  box-shadow: 0 1px 3px rgba(214, 206, 242, 0.12), 0 1px 2px rgba(214, 206, 242, 0.24);\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\nmain .my_container .my_card i[data-v-67cb3b51] {\n  font-size: 20px;\n  color: #010326;\n}\nmain .my_container .my_card i[data-v-67cb3b51]:hover {\n  cursor: pointer;\n}\nmain .my_container .my_card:hover .my_card_header > .author > h5[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > h5[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > p[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > .post_date[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card .my_card_header[data-v-67cb3b51] {\n  transition: all 0.1s linear;\n  background-color: #eee;\n  color: #010440;\n}\nmain .my_container .my_card .my_card_body h5[data-v-67cb3b51] {\n  color: #73026B;\n  transition: all 0.3s ease-in;\n}\nmain .my_container .my_card .my_card_body p[data-v-67cb3b51] {\n  color: #1D0259;\n  transition: all 0.3s ease-in;\n}\nmain .my_container .my_card .my_card_body .post_tags[data-v-67cb3b51] {\n  color: #5852F2;\n}\nmain .my_container .my_card .my_card_body .post_tags span[data-v-67cb3b51]:hover {\n  cursor: context-menu;\n}\nmain .my_container .my_card .my_card_body .post_date[data-v-67cb3b51] {\n  text-align: right;\n  font-size: 12px;\n  color: #010326;\n}", ""]);
+exports.push([module.i, "main[data-v-67cb3b51] {\n  background-color: black;\n  background-size: cover;\n  min-height: 100vh;\n  width: 100%;\n  overflow: hidden;\n}\nmain .my_container[data-v-67cb3b51] {\n  background-color: rgba(1, 0, 20, 0.8);\n  min-height: 100vh;\n  padding: 0;\n}\nmain .my_container .img_box[data-v-67cb3b51] {\n  width: 100%;\n  height: 300px;\n}\nmain .my_container .img_box img[data-v-67cb3b51] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\nmain .my_container .my_card[data-v-67cb3b51] {\n  border-radius: 0;\n  background-color: #F2F2F2;\n  box-shadow: 0 1px 3px rgba(214, 206, 242, 0.12), 0 1px 2px rgba(214, 206, 242, 0.24);\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\nmain .my_container .my_card i[data-v-67cb3b51] {\n  font-size: 20px;\n  color: #010326;\n}\nmain .my_container .my_card i[data-v-67cb3b51]:hover {\n  cursor: pointer;\n}\nmain .my_container .my_card:hover .my_card_header > h5[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > p[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > .author_date[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card .my_card_header[data-v-67cb3b51] {\n  transition: all 0.1s linear;\n  background-color: #eee;\n  color: #010440;\n}\nmain .my_container .my_card .my_card_body p[data-v-67cb3b51] {\n  color: #1D0259;\n  transition: all 0.3s ease-in;\n}\nmain .my_container .my_card .my_card_body .post_tags[data-v-67cb3b51] {\n  color: #5852F2;\n}\nmain .my_container .my_card .my_card_body .post_tags span[data-v-67cb3b51]:hover {\n  cursor: context-menu;\n}\nmain .my_container .my_card .my_card_body .my_category[data-v-67cb3b51] {\n  background-color: #060d2f;\n  color: white;\n}\nmain .my_container .my_card .my_card_body .my_category[data-v-67cb3b51]:hover {\n  cursor: context-menu;\n}\nmain .my_container .my_card .my_card_body .author_date[data-v-67cb3b51] {\n  text-align: right;\n  font-size: 12px;\n  color: #010326;\n}\nmain .my_container .my_card .my_card_body .author_date .author h6[data-v-67cb3b51] {\n  color: #060d2f;\n}", ""]);
 
 // exports
 
@@ -40351,12 +40357,12 @@ var render = function() {
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.post.category
-                    ? _c("span", { staticClass: "btn" }, [
+                    ? _c("span", { staticClass: "btn my_category my-3" }, [
                         _vm._v(_vm._s(_vm.post.category.name))
                       ])
                     : _vm._e(),
                   _vm._v(" "),
-                  _c("div", { staticClass: "post_date" }, [
+                  _c("div", { staticClass: "author_date" }, [
                     _vm._m(1),
                     _vm._v(" "),
                     _c("span", { staticClass: "date_post" }, [
@@ -40374,7 +40380,7 @@ var render = function() {
           _c(
             "router-link",
             {
-              staticClass: "btn btn-light my-4",
+              staticClass: "btn btn-light my-4 mx-3",
               attrs: { to: { name: "blog" } }
             },
             [_vm._v("Go Back")]
@@ -40390,7 +40396,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "social icons" }, [
+    return _c("div", { staticClass: "social_icons" }, [
       _c("i", { staticClass: "bi bi-share" }),
       _vm._v(" "),
       _c("i", { staticClass: "bi bi-heart-fill mx-3" }),
@@ -40403,9 +40409,8 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "author" }, [
-      _c("i", { staticClass: "bi bi-person-circle" }),
-      _vm._v(" "),
-      _c("h5", { staticClass: "d-inline-block mx-1" }, [_vm._v("User")])
+      _vm._v(" Written by: "),
+      _c("h6", { staticClass: "d-inline-block mx-1" }, [_vm._v("User")])
     ])
   }
 ]
