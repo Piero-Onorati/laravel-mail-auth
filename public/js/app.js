@@ -2502,6 +2502,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2515,12 +2521,26 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendForm: function sendForm() {
+      var _this = this;
+
+      this.sending = true;
+      this.success = false;
       axios.post('/api/contacts', {
         'name': this.name,
         'email': this.email,
         'message': this.message
       }).then(function (response) {
-        console.log(response);
+        if (!response.data.success) {
+          _this.errors = response.data.errors;
+          _this.success = false;
+        } else {
+          _this.success = true;
+          console.log(response);
+          _this.sending = false;
+          _this.name = "";
+          _this.email = "";
+          _this.message = "";
+        }
       })["catch"](function (error) {
         console.log(error);
       });
@@ -2689,8 +2709,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -7339,7 +7357,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-2d69ed48] {\n  background-image: url(\"/img/bg_2.jpg\");\n  background-size: cover;\n  min-height: calc(100vh - 140px);\n  width: 100%;\n  overflow: hidden;\n}", ""]);
+exports.push([module.i, "main[data-v-2d69ed48] {\n  background-image: url(\"/img/bg_2.jpg\");\n  background-size: cover;\n  min-height: calc(100vh - 140px);\n  width: 100%;\n  overflow: hidden;\n}\nmain .my_container[data-v-2d69ed48] {\n  background-color: rgba(1, 0, 20, 0.9);\n  border-radius: 10px;\n}\nmain .my_container h2[data-v-2d69ed48] {\n  font-size: 2rem;\n  color: whitesmoke;\n  line-height: 50px;\n  letter-spacing: 1px;\n  padding-bottom: 15px;\n}\nmain .my_container form[data-v-2d69ed48] {\n  color: #6d6d6d;\n}\nmain .my_container form button[data-v-2d69ed48] {\n  background-color: #6C60BF;\n  color: #eeeeee;\n  transition: 0.3s ease-in;\n}\nmain .my_container form button[data-v-2d69ed48]:hover {\n  background-color: #40012F;\n}", ""]);
 
 // exports
 
@@ -7377,7 +7395,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-67cb3b51] {\n  /* background-image: url('/img/bg_2.jpg'); */\n  background-color: black;\n  background-size: cover;\n  min-height: 100vh;\n  width: 100%;\n  overflow: hidden;\n}\nmain .my_container[data-v-67cb3b51] {\n  background-color: rgba(1, 0, 20, 0.8);\n  min-height: 100vh;\n  padding: 0;\n}\nmain .my_container .img_box[data-v-67cb3b51] {\n  width: 100%;\n  height: 300px;\n}\nmain .my_container .img_box img[data-v-67cb3b51] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\nmain .my_container .my_card[data-v-67cb3b51] {\n  background-color: #F2F2F2;\n  box-shadow: 0 1px 3px rgba(214, 206, 242, 0.12), 0 1px 2px rgba(214, 206, 242, 0.24);\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\nmain .my_container .my_card i[data-v-67cb3b51] {\n  font-size: 20px;\n  color: #260115;\n}\nmain .my_container .my_card i[data-v-67cb3b51]:hover {\n  cursor: pointer;\n}\nmain .my_container .my_card[data-v-67cb3b51]:hover {\n  box-shadow: 0 14px 28px rgba(214, 206, 242, 0.25), 0 10px 10px rgba(214, 206, 242, 0.22);\n}\nmain .my_container .my_card:hover .my_card_header[data-v-67cb3b51] {\n  background-color: #B7A7F2;\n}\nmain .my_container .my_card:hover .my_card_header > .author > h5[data-v-67cb3b51] {\n  color: #010326;\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > h5[data-v-67cb3b51] {\n  color: #1B1159;\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > p[data-v-67cb3b51] {\n  color: #6C3D73;\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > .post_date[data-v-67cb3b51] {\n  color: gray;\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_footer > span[data-v-67cb3b51] {\n  background-color: #6C60BF;\n}\nmain .my_container .my_card:hover i[data-v-67cb3b51] {\n  color: #010326;\n}\nmain .my_container .my_card .my_card_header[data-v-67cb3b51] {\n  transition: all 0.1s linear;\n  background-color: #DCBBF2;\n  color: #010440;\n}\nmain .my_container .my_card .my_card_body h5[data-v-67cb3b51] {\n  color: #73026B;\n  transition: all 0.3s ease-in;\n}\nmain .my_container .my_card .my_card_body p[data-v-67cb3b51] {\n  color: #1D0259;\n  transition: all 0.3s ease-in;\n}\nmain .my_container .my_card .my_card_body .post_tags[data-v-67cb3b51] {\n  color: #5852F2;\n}\nmain .my_container .my_card .my_card_body .post_tags span[data-v-67cb3b51]:hover {\n  cursor: context-menu;\n}\nmain .my_container .my_card .my_card_body .post_date[data-v-67cb3b51] {\n  text-align: right;\n  font-size: 12px;\n  color: #010326;\n}\nmain .my_container .my_card .my_card_footer span[data-v-67cb3b51] {\n  background-color: #40012F;\n  color: #eeeeee;\n  transition: 0.3s ease-in;\n}", ""]);
+exports.push([module.i, "main[data-v-67cb3b51] {\n  /* background-image: url('/img/bg_2.jpg'); */\n  background-color: black;\n  background-size: cover;\n  min-height: 100vh;\n  width: 100%;\n  overflow: hidden;\n}\nmain .my_container[data-v-67cb3b51] {\n  background-color: rgba(1, 0, 20, 0.8);\n  min-height: 100vh;\n  padding: 0;\n}\nmain .my_container .img_box[data-v-67cb3b51] {\n  width: 100%;\n  height: 300px;\n}\nmain .my_container .img_box img[data-v-67cb3b51] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\nmain .my_container .my_card[data-v-67cb3b51] {\n  border-radius: 0;\n  background-color: #F2F2F2;\n  box-shadow: 0 1px 3px rgba(214, 206, 242, 0.12), 0 1px 2px rgba(214, 206, 242, 0.24);\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\nmain .my_container .my_card i[data-v-67cb3b51] {\n  font-size: 20px;\n  color: #010326;\n}\nmain .my_container .my_card i[data-v-67cb3b51]:hover {\n  cursor: pointer;\n}\nmain .my_container .my_card:hover .my_card_header > .author > h5[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > h5[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > p[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card:hover .my_card_body > .post_date[data-v-67cb3b51] {\n  cursor: context-menu;\n}\nmain .my_container .my_card .my_card_header[data-v-67cb3b51] {\n  transition: all 0.1s linear;\n  background-color: #eee;\n  color: #010440;\n}\nmain .my_container .my_card .my_card_body h5[data-v-67cb3b51] {\n  color: #73026B;\n  transition: all 0.3s ease-in;\n}\nmain .my_container .my_card .my_card_body p[data-v-67cb3b51] {\n  color: #1D0259;\n  transition: all 0.3s ease-in;\n}\nmain .my_container .my_card .my_card_body .post_tags[data-v-67cb3b51] {\n  color: #5852F2;\n}\nmain .my_container .my_card .my_card_body .post_tags span[data-v-67cb3b51]:hover {\n  cursor: context-menu;\n}\nmain .my_container .my_card .my_card_body .post_date[data-v-67cb3b51] {\n  text-align: right;\n  font-size: 12px;\n  color: #010326;\n}", ""]);
 
 // exports
 
@@ -39858,9 +39876,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main", [
-    _c("div", { staticClass: "container" }, [
-      _c("div", [
+  return _c(
+    "main",
+    { staticClass: "d-flex justify-content-center align-items-center" },
+    [
+      _c("div", { staticClass: "container my_container p-5" }, [
+        _c("h2", [_vm._v("Hi there! Do you want to ask us something?")]),
+        _vm._v(" "),
+        _vm.success
+          ? _c("div", { staticClass: "alert alert-light" }, [
+              _vm._v("Messaggio inviato")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
         _c(
           "form",
           {
@@ -39872,121 +39900,146 @@ var render = function() {
             }
           },
           [
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "label",
-                { staticClass: "form-label", attrs: { for: "your_name" } },
-                [_vm._v("Name")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.name,
-                    expression: "name"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  name: "name",
-                  id: "your_name",
-                  placeholder: "What's your name?"
-                },
-                domProps: { value: _vm.name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+            _c(
+              "div",
+              { staticClass: "mb-3" },
+              [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "your_name" } },
+                  [_vm._v("Name")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.name,
+                      expression: "name"
                     }
-                    _vm.name = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "label",
-                { staticClass: "form-label", attrs: { for: "your_email" } },
-                [_vm._v("Email address")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.email,
-                    expression: "email"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "email",
-                  name: "email",
-                  id: "your_email",
-                  placeholder: "Email..."
-                },
-                domProps: { value: _vm.email },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    name: "name",
+                    id: "your_name",
+                    placeholder: "What's your name?"
+                  },
+                  domProps: { value: _vm.name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.name = $event.target.value
                     }
-                    _vm.email = $event.target.value
                   }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c(
-                "label",
-                { staticClass: "form-label", attrs: { for: "your_message" } },
-                [_vm._v("Example textarea")]
-              ),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.message,
-                    expression: "message"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  name: "message",
-                  id: "your_message",
-                  rows: "3",
-                  placeholder: "Write me a message..."
-                },
-                domProps: { value: _vm.message },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.message = $event.target.value
-                  }
-                }
-              })
-            ]),
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.errors.name, function(error, index) {
+                  return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                })
+              ],
+              2
+            ),
             _vm._v(" "),
             _c(
-              "button",
-              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Submit")]
-            )
+              "div",
+              { staticClass: "mb-3" },
+              [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "your_email" } },
+                  [_vm._v("Email address")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.email,
+                      expression: "email"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "email",
+                    name: "email",
+                    id: "your_email",
+                    placeholder: "Email..."
+                  },
+                  domProps: { value: _vm.email },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.email = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.errors.email, function(error, index) {
+                  return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "mb-3" },
+              [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "your_message" } },
+                  [_vm._v("Example textarea")]
+                ),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.message,
+                      expression: "message"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    name: "message",
+                    id: "your_message",
+                    rows: "3",
+                    placeholder: "Write me a message..."
+                  },
+                  domProps: { value: _vm.message },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.message = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.errors.message, function(error, index) {
+                  return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c("button", { staticClass: "btn", attrs: { type: "submit" } }, [
+              _vm._v(_vm._s(_vm.sending ? "invio in corso" : "Submit"))
+            ])
           ]
         )
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -40248,29 +40301,38 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c(
-      "div",
-      { staticClass: "container my_container" },
-      [
-        _c("div", { staticClass: "img_box" }, [
-          _vm.post.cover
-            ? _c("img", { attrs: { src: _vm.post.cover, alt: _vm.post.title } })
-            : _vm._e()
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-8" }, [
+    _c("div", { staticClass: "container my_container" }, [
+      _c("div", { staticClass: "img_box" }, [
+        _vm.post.cover
+          ? _c("img", { attrs: { src: _vm.post.cover, alt: _vm.post.title } })
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c("div", { staticClass: "col-12" }, [
             _c(
               "div",
-              { staticClass: "card border-secondary mb-3 h-100 my_card " },
+              { staticClass: "card border-secondary mb-3 h-100 my_card" },
               [
-                _vm._m(0),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card-header border-secondary d-flex justify-content-between align-items-center my_card_header"
+                  },
+                  [
+                    _c("h5", { staticClass: "card-title h-25" }, [
+                      _vm._v(_vm._s(_vm.post.title))
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body my_card_body" }, [
-                  _c("h5", { staticClass: "card-title h-25" }, [
-                    _vm._v(_vm._s(_vm.post.title))
-                  ]),
-                  _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(_vm._s(_vm.post.content))
                   ]),
@@ -40288,7 +40350,15 @@ var render = function() {
                       )
                     : _vm._e(),
                   _vm._v(" "),
+                  _vm.post.category
+                    ? _c("span", { staticClass: "btn" }, [
+                        _vm._v(_vm._s(_vm.post.category.name))
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
                   _c("div", { staticClass: "post_date" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
                     _c("span", { staticClass: "date_post" }, [
                       _vm._v(
                         "Posted on: " +
@@ -40296,40 +40366,23 @@ var render = function() {
                       )
                     ])
                   ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "card-footer bg-transparent border-secondary text-white d-flex justify-content-between align-items-center my_card_footer"
-                  },
-                  [
-                    _vm.post.category
-                      ? _c("span", { staticClass: "btn" }, [
-                          _vm._v(_vm._s(_vm.post.category.name))
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm._m(1)
-                  ]
-                )
+                ])
               ]
             )
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          {
-            staticClass: "btn btn-light my-4",
-            attrs: { to: { name: "blog" } }
-          },
-          [_vm._v("Go Back")]
-        )
-      ],
-      1
-    )
+          ]),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "btn btn-light my-4",
+              attrs: { to: { name: "blog" } }
+            },
+            [_vm._v("Go Back")]
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -40337,31 +40390,22 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "card-header border-secondary d-flex justify-content-between align-items-center my_card_header"
-      },
-      [
-        _c("div", { staticClass: "author" }, [
-          _c("i", { staticClass: "bi bi-person-circle" }),
-          _vm._v(" "),
-          _c("h5", { staticClass: "d-inline-block mx-1" }, [_vm._v("User")])
-        ]),
-        _vm._v(" "),
-        _c("i", { staticClass: "bi bi-share" })
-      ]
-    )
+    return _c("div", { staticClass: "social icons" }, [
+      _c("i", { staticClass: "bi bi-share" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "bi bi-heart-fill mx-3" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "bi bi-save2" })
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "likeAndSave" }, [
-      _c("i", { staticClass: "bi bi-heart-fill mx-3" }),
+    return _c("div", { staticClass: "author" }, [
+      _c("i", { staticClass: "bi bi-person-circle" }),
       _vm._v(" "),
-      _c("i", { staticClass: "bi bi-save2" })
+      _c("h5", { staticClass: "d-inline-block mx-1" }, [_vm._v("User")])
     ])
   }
 ]

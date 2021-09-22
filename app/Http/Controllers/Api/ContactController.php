@@ -26,6 +26,8 @@ class ContactController extends Controller
                 'success' => false,
                 'errors' => $validator->errors()
             ]);
+        }else{
+            return response()->json(['success' => true ]);
         }
 
         // salviamo i dati nella tabella
