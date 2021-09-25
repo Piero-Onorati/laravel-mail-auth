@@ -4,7 +4,7 @@
 
     <h2>Hi there! Do you want to ask us something?</h2>
 
-    <div v-if="success" class="alert alert-light">Messaggio inviato</div>
+    <div v-if="success" class="alert alert-primary">Messaggio inviato</div>
 
     <form @submit.prevent="sendForm" >
 
@@ -12,21 +12,21 @@
       <div class="mb-3">
         <label for="your_name" class="form-label">Name</label>
         <input type="text" v-model="name" class="form-control" name="name" id="your_name" placeholder="What's your name?">
-        <p v-for="(error,index) in errors.name" :key="index">{{error}}</p>
+        <p class="alert alert-danger my-2" v-for="(error,index) in errors.name" :key="index">{{error}}</p>
       </div>
 
       <!-- EMAIL ADRESS -->
       <div class="mb-3">
         <label for="your_email" class="form-label">Email address</label>
         <input type="email" v-model="email" class="form-control" name="email" id="your_email" placeholder="Email...">
-        <p v-for="(error,index) in errors.email" :key="index">{{error}}</p>
+        <p class="alert alert-danger my-2" v-for="(error,index) in errors.email" :key="index">{{error}}</p>
       </div>
 
       <!-- MESSAGE -->
       <div class="mb-3">
         <label for="your_message" class="form-label">Example textarea</label>
         <textarea  v-model="message" class="form-control" name="message" id="your_message" rows="3" placeholder="Write me a message..."></textarea>
-        <p v-for="(error,index) in errors.message" :key="index">{{error}}</p>
+        <p class="alert alert-danger my-2" v-for="(error,index) in errors.message" :key="index">{{error}}</p>
       </div>
 
       <!-- BUTTON -->

@@ -6,43 +6,51 @@
 
   <!-- start CARD -->
   <div class="card mb-3">
- 
+
     {{-- card header --}}
     <div class="card-header">
       <h4 class="card-title">{{$post->title}}</h4>
     </div>
 
-    <div class="d-flex">
+    {{-- Card body --}}
+    <div class="row g-0">
 
-      {{-- card image --}}
+      <!-- CARD IMAGE -->
       @if($post->cover)
-        <div style="width: 50%" class="bg-transparent">
-          <img src="{{ asset('storage/' . $post->cover)}}" class="img-fluid" alt="">
-        </div>
+      <div class="col-md-4 ">
+        <img src="{{ asset('storage/' . $post->cover)}}" class="img-fluid rounded-start" alt="">
+      </div>
       @endif
 
-      {{-- List: CATEGORY + TAGS  --}}
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          @if ($post->category)
-            <h5>Category: <span class="text-uppercase badge bg-light text-dark">{{$post->category->name}}</span></h5>
-          @endif
-        </li>
-        <li class="list-group-item">
-          @forelse ($post->tags as $tag)
-            <h5 class="d-inline-block"><span class="badge post_tag">{{$tag->name}}</span></h5>
-          @empty
-          there are not tags      
-          @endforelse
-        </li>
-      </ul>
-    </div>
+      <!-- CARD CONTENT + CATEGORY + TAGS -->
+      <div class="col-md-8">
+        <div class="card-body">
+    
+          <!--# Content #-->
+          <p class="card-text">{{$post->content}}</p>
 
+          <!--# List: CATEGORY + TAGS  -->
+          <ul class="list-group list-group-flush">
 
-    {{-- Card body --}}
-    <div class="card-body">
-      <!--# Content #-->
-      <p class="card-text">{{$post->content}}</p>
+            <!--------- Categorty ---------->
+            <li class="list-group-item">
+              @if ($post->category)
+                <h5>Category: <span class="text-uppercase badge bg-light text-dark">{{$post->category->name}}</span></h5>
+              @endif
+            </li>
+
+            <!----------- Tags ------------->
+            <li class="list-group-item">
+              @forelse ($post->tags as $tag)
+                <h5 class="d-inline-block"><span class="badge post_tag">{{$tag->name}}</span></h5>
+              @empty
+              there are not tags      
+              @endforelse
+            </li>
+          </ul>
+  
+        </div>
+      </div>
 
     </div>
 
@@ -50,7 +58,7 @@
     <div class="card-footer text-muted">
       Written by: User
     </div>
-
+ 
   </div>
   <!-- end CARD -->
 

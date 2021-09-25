@@ -39890,7 +39890,7 @@ var render = function() {
         _c("h2", [_vm._v("Hi there! Do you want to ask us something?")]),
         _vm._v(" "),
         _vm.success
-          ? _c("div", { staticClass: "alert alert-light" }, [
+          ? _c("div", { staticClass: "alert alert-primary" }, [
               _vm._v("Messaggio inviato")
             ])
           : _vm._e(),
@@ -39944,7 +39944,11 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _vm._l(_vm.errors.name, function(error, index) {
-                  return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                  return _c(
+                    "p",
+                    { key: index, staticClass: "alert alert-danger my-2" },
+                    [_vm._v(_vm._s(error))]
+                  )
                 })
               ],
               2
@@ -39988,7 +39992,11 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _vm._l(_vm.errors.email, function(error, index) {
-                  return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                  return _c(
+                    "p",
+                    { key: index, staticClass: "alert alert-danger my-2" },
+                    [_vm._v(_vm._s(error))]
+                  )
                 })
               ],
               2
@@ -40032,7 +40040,11 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _vm._l(_vm.errors.message, function(error, index) {
-                  return _c("p", { key: index }, [_vm._v(_vm._s(error))])
+                  return _c(
+                    "p",
+                    { key: index, staticClass: "alert alert-danger my-2" },
+                    [_vm._v(_vm._s(error))]
+                  )
                 })
               ],
               2
